@@ -1,0 +1,44 @@
+{% load static %}
+<!-- TEMPLATE: NAVBAR -->
+<!-- AUTHOR: MIHAI MOROSAN -->
+<div class="navbar">
+    {% if request.get_full_path == "/" %}
+    <div class="logo-home">
+        <a href="/">
+            <img src="{% static '/IMG/logo-home.png'%}" alt="logo">
+        </a>
+    </div>
+    {% else %}
+    <div class="logo-page">
+        <a href="/">
+            <img src="{% static '/IMG/logo-page.png'%}" alt="logo">
+        </a>
+    </div>
+    {% endif %} 
+    <div class="links">
+        <div class="drop-down-menu">
+            <div class="drop-down-button">
+               <p>Portfolio</p>
+            </div>
+            <div class="drop-down-links">
+                <!-- FILM -->
+                <div class="drop-down-link">
+                    <a href="/film/">film</a>
+                </div> 
+                <!-- PHOTOGRAPHY -->
+                <div class="drop-down-link">
+                    <a href="/photography/">photography</a>
+                </div>
+                <!-- VISUAL -->
+                <div class="drop-down-link">
+                    <a href="/visual/">visual</a>
+                </div>
+            </div>
+        </div>
+        <div class="link">
+            <p>
+                <a href="/about-me/">About <span class="red">|</span> Contact</a>
+            </p>
+        </div>
+    </div>
+</div>

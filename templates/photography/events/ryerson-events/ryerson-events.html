@@ -1,0 +1,80 @@
+{% load photography_tags %}
+{% load static %}
+<!-- TEMPLATE: RYERSON-EVENTS -->
+<!-- AUTHOR: MIHAI MOROSAN -->
+<div class="jomeeli-ryerson-events-page">
+    <div class="heading">
+        <p>
+            <span class="white">Ryerson Events</span>
+        </p>
+    </div>
+    <div class="jomeeli-ryerson-events-col">
+        <div class="jomeeli-ryerson-events-row">
+            <div class="ryerson-events">
+                {% for rye_event in posts %}
+                <div class="ryerson-event">    
+                    <div class="ryerson-event-title">
+                        <p>{{ rye_event.title }} ({{ rye_event.event_date|date:"F d, Y" }})</p>
+                    </div>
+                    <div class="ryerson-event-images">
+                        <div class="ryerson-event-images-row">
+                            <!-- Column 1 -->
+                            <div class="ryerson-event-images-col">
+                                {% for rye_img in rye_event.get_all_images %}
+                                {% if forloop.counter0|modulo:5 == 0 %}
+                                <div class="ryerson-event-image">
+                                    <img src="{{ rye_img.image.url }}" alt="{{ rye_event.title }} picture number: {{ forloop.counter }}">
+                                </div>
+                                {% endif %}
+                                {% endfor %}
+                            </div>
+                            <!-- Column 2 -->
+                            <div class="ryerson-event-images-col">
+                                {% for rye_img in rye_event.get_all_images %}
+                                {% if forloop.counter0|modulo:5 == 1 %}
+                                <div class="ryerson-event-image">
+                                    <img src="{{ rye_img.image.url }}" alt="{{ rye_event.title }} picture number: {{ forloop.counter }}">
+                                </div>
+                                {% endif %}
+                                {% endfor %}
+                            </div>
+                            <!-- Column 3 -->
+                            <div class="ryerson-event-images-col">
+                                {% for rye_img in rye_event.get_all_images %}
+                                {% if forloop.counter0|modulo:5 == 2 %}
+                                <div class="ryerson-event-image">
+                                    <img src="{{ rye_img.image.url }}" alt="{{ rye_event.title }} picture number: {{ forloop.counter }}">
+                                </div>
+                                {% endif %}
+                                {% endfor %}
+                            </div>
+                            <!-- Column 4 -->
+                            <div class="ryerson-event-images-col">
+                                {% for rye_img in rye_event.get_all_images %}
+                                {% if forloop.counter0|modulo:5 == 3 %}
+                                <div class="ryerson-event-image">
+                                    <img src="{{ rye_img.image.url }}" alt="{{ rye_event.title }} picture number: {{ forloop.counter }}">
+                                </div>
+                                {% endif %}
+                                {% endfor %}
+                            </div>
+                            <!-- Column 5 -->
+                            <div class="ryerson-event-images-col">
+                                {% for rye_img in rye_event.get_all_images %}
+                                {% if forloop.counter0|modulo:5 == 4 %}
+                                <div class="ryerson-event-image">
+                                    <img src="{{ rye_img.image.url }}" alt="{{ rye_event.title }} picture number: {{ forloop.counter }}">
+                                </div>
+                                {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                {% empty %}
+                <p class="nothing-yet"><span class="white">No Events yet!</span></p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

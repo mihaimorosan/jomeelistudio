@@ -1,0 +1,74 @@
+
+{% load photography_tags %}
+{% load static %}
+<!-- TEMPLATE: TCE -->
+<!-- AUTHOR: MIHAI MOROSAN -->
+<div class="jomeeli-tce-page">
+    <div class="heading">
+        <p>
+            <span class="white">TCE</span>
+        </p>
+    </div>
+    <div class="jomeeli-tce-col">
+        <div class="jomeeli-tce-row">
+            <div class="tce">
+                {% for post in posts %}
+                <div class="tce-images-row">
+                    <!-- Column 1 -->
+                    <div class="tce-images-col">
+                        {% for tce in post.get_all_images %}
+                        {% if forloop.counter0|modulo:5 == 0 %}
+                        <div class="tce-image">
+                            <img src="{{ tce.image.url }}" alt="picture number: {{ forloop.counter }}">
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    <!-- Column 2 -->
+                    <div class="tce-images-col">
+                        {% for tce in post.get_all_images %}
+                        {% if forloop.counter0|modulo:5 == 1 %}
+                        <div class="tce-image">
+                            <img src="{{ tce.image.url }}" alt="picture number: {{ forloop.counter }}">
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    <!-- Column 3 -->
+                    <div class="tce-images-col">
+                        {% for tce in post.get_all_images %}
+                        {% if forloop.counter0|modulo:5 == 2 %}
+                        <div class="tce-image">
+                            <img src="{{ tce.image.url }}" alt="picture number: {{ forloop.counter }}">
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    <!-- Column 4 -->
+                    <div class="tce-images-col">
+                        {% for tce in post.get_all_images %}
+                        {% if forloop.counter0|modulo:5 == 3 %}
+                        <div class="tce-image">
+                            <img src="{{ tce.image.url }}" alt="picture number: {{ forloop.counter }}">
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    <!-- Column 5 -->
+                    <div class="tce-images-col">
+                        {% for tce in post.get_all_images %}
+                        {% if forloop.counter0|modulo:5 == 4 %}
+                        <div class="tce-image">
+                            <img src="{{ tce.image.url }}" alt="picture number: {{ forloop.counter }}">
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                {% empty %}
+                <p class="nothing-yet"><span class="white">No Posts Yet!</span></p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

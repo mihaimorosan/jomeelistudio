@@ -1,0 +1,30 @@
+{% load static %}
+<!-- TEMPLATE: ABOUT-ME -->
+<!-- AUTHOR: MIHAI MOROSAN -->
+<div class="jomeeli-about-me-page">
+    <div class="heading">
+        <p><span class="white">about me</span></p>
+    </div>
+    <div class="about-me-content">
+        {% for post in posts %}
+        <div class="jomeeli-about-me-col">
+            <div class="jomeeli-about-me-row">
+                <div class="about-me">
+                    <div class="about-me-image">
+                        <img src="{{ post.image.url }}" alt="Jomilee Gerardo - About Me">
+                    </div>
+                    <div class="about-me-description">
+                        <p>{{ post.description|safe }}</p>
+                    </div>
+                </div>
+                <div class="about-me-contact-info">
+                    <p class="about-me-email">email: jomeeli09@gmail.com</p>
+                    <p class="about-me-phone">phone: 647-832-0195</p>
+                </div>
+            </div> 
+        </div>
+        {% empty %}
+        <p class="nothing-yet"><span class="white">Nothing yet!</span></p>
+        {% endfor %}
+    </div>   
+</div>

@@ -1,0 +1,29 @@
+{% load photography_tags %}
+{% load static %}
+<!-- TEMPLATE: CREATIVE -->
+<!-- AUTHOR: MIHAI MOROSAN -->
+<div class="jomeeli-creative-page">
+    <div class="heading">
+        <p>
+            <span class="white">creative photography</span>
+        </p>
+    </div>
+    <div class="jomeeli-creative-col">
+        {% for post in object_list %}
+        <div class="jomeeli-creative-row">
+            <div class="creative_content">
+                <a href="{{ post.get_absolute_url }}">
+                    <div class="creative-project">
+                            <img class="creative-project-image" src="{{ post.project_thumbnail.url }}" alt="project number: {{ forloop.counter }}">
+                        <div class="creative-project-title">
+                            {{ post.project_title }}
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        {% empty %}
+        <p class="nothing-yet"><span class="white">No Projects Yet!</span></p>
+        {% endfor %}  
+    </div>
+</div>

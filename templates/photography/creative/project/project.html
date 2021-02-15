@@ -1,0 +1,60 @@
+{% load photography_tags %}
+{% load static %}
+<!-- TEMPLATE: PROJECT -->
+<!-- AUTHOR: MIHAI MOROSAN -->
+<div class="jomeeli-project-page">
+    <div class="project-content">
+        <div class="project-images-row">
+            <!-- Column 1 -->
+            <div class="project-images-col">
+            {% for post in object.get_all_images%}
+            {% if forloop.counter0|modulo:5 == 0 %}
+            <div class="project-image">
+                <img src="{{ post.image.url }}" alt="picture number: {{ forloop.counter }}">
+            </div>
+            {% endif %}
+            {% endfor %}
+            </div>
+            <!-- Column 2 -->
+            <div class="project-images-col">
+                {% for post in object.get_all_images%}
+                {% if forloop.counter0|modulo:5 == 1 %}
+                <div class="project-image">
+                    <img src="{{ post.image.url }}" alt="picture number: {{ forloop.counter }}">
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+            <!-- Column 3 -->
+            <div class="project-images-col">
+                {% for post in object.get_all_images%}
+                {% if forloop.counter0|modulo:5 == 2 %}
+                <div class="project-image">
+                    <img src="{{ post.image.url }}" alt="picture number: {{ forloop.counter }}">
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+            <!-- Column 4 -->
+            <div class="project-images-col">
+                {% for post in object.get_all_images%}
+                {% if forloop.counter0|modulo:5 == 3 %}
+                <div class="project-image">
+                    <img src="{{ post.image.url }}" alt="picture number: {{ forloop.counter }}">
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+            <!-- Column 5 -->
+            <div class="project-images-col">
+                {% for post in object.get_all_images%}
+                {% if forloop.counter0|modulo:5 == 4 %}
+                <div class="project-image">
+                    <img src="{{ post.image.url }}" alt="picture number: {{ forloop.counter }}">
+                </div>
+                {% endif %}
+                {% endfor %}
+             </div>
+        </div>
+    </div>
+</div>

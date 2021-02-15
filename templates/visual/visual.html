@@ -1,0 +1,39 @@
+{% load static %}
+<!-- TEMPLATE: VISUAL -->
+<!-- AUTHOR: MIHAI MOROSAN -->
+<div class="jomeeli-visual-page">
+    <div class="heading">
+        <p><span class="white">visual.</span></p>
+    </div>
+    <div class="jomeeli-visual-col">
+        <div class="jomeeli-visual-row">
+            <div class="visual-content">
+                <div class="visuals">
+                    {% for post in posts %}
+                    {% if not forloop.counter|divisibleby:2 %}
+                    <div class="visual1">
+                        <div class="visual-image">
+                            <img src="{{ post.picture.url }}" alt="Visual image: {{ forloop.counter }}">
+                        </div>
+                        <div class="visual-description">
+                            <p>{{ post.description }}</p>
+                        </div>
+                    </div>
+                    {% else %}
+                    <div class="visual2">
+                        <div class="visual-description">
+                            <p>{{ post.description }}</p>
+                        </div>
+                        <div class="visual-image">
+                            <img src="{{ post.picture.url }}" alt="Visual image: {{ forloop.counter }}">
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% empty %}
+                    <p class="nothing-yet"><span class="white">No Visuals Yet!</span></p>
+                    {% endfor %}
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>

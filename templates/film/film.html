@@ -1,0 +1,25 @@
+{% load static %}
+<!-- TEMPLATE: FILM -->
+<!-- AUTHOR: MIHAI MOROSAN -->
+<div class="jomeeli-film-page">
+    <div class="heading">
+        <p><span class="white">film.</span></p>
+    </div>
+    <div class="jomeeli-film-col">
+        <div class="jomeeli-film-row">
+            <div class="film-content">
+                <div class="movies">
+                    {% for movie in posts %}
+                    <div class="movie">
+                        <video  controls>
+                            <source src="{{ movie.movie.url }}" type="video/mp4">
+                        </video>
+                    </div>
+                    {% empty %}
+                    <p class="nothing-yet"><span class="white">No movies yet!</span></p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
